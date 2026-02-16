@@ -55,7 +55,7 @@ pub use crate::client::{
 };
 
 pub use crate::device::{
-    get_device_id, get_device_info, get_device_name, get_platform, get_platform_version,
+    generate_device_id, get_device_id, get_device_info, get_device_name, get_platform, get_platform_version,
     hash_string, simple_hash, DeviceInfo, Platform,
 };
 

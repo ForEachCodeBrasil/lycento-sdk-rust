@@ -3,9 +3,9 @@
 //! This module provides the `LycentoClient` struct and all related types
 //! for interacting with the Lycento licensing API.
 
-use crate::device::{get_device_id, get_device_info, DeviceInfo, Platform};
+use crate::device::{get_device_id, get_device_info, Platform};
 use crate::errors::{
-    ActivationError, DeactivationError, LycentoError, NetworkError, ValidationError,
+    ActivationError, DeactivationError, LycentoError, ValidationError,
 };
 use reqwest::Client;
 use serde::{Deserialize, Serialize};

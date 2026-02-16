@@ -141,16 +141,21 @@ impl From<reqwest::Error> for NetworkError {
 }
 
 /// Result type alias for SDK operations.
+#[allow(dead_code)]
 pub type Result<T, E = LycentoError> = std::result::Result<T, E>;
 
 /// Specialized result type for activation operations.
+#[allow(dead_code)]
 pub type ActivationResult<T> = std::result::Result<T, ActivationError>;
 
 /// Specialized result type for validation operations.
+#[allow(dead_code)]
 pub type ValidationResult<T> = std::result::Result<T, ValidationError>;
 
 /// Specialized result type for deactivation operations.
+#[allow(dead_code)]
 pub type DeactivationResult<T> = std::result::Result<T, DeactivationError>;
 
 /// Specialized result type for network operations.
+#[allow(dead_code)]
 pub type NetworkResult<T> = std::result::Result<T, NetworkError>;

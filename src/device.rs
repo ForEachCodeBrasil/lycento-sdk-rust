@@ -77,7 +77,7 @@ impl Default for DeviceInfo {
 }
 
 /// Cached device ID for performance.
-static CACHED_DEVICE_ID: Lazy<String> = Lazy::new(get_device_id);
+static CACHED_DEVICE_ID: Lazy<String> = Lazy::new(generate_device_id);
 
 /// Get the cached device ID.
 pub fn get_device_id() -> String {
@@ -88,7 +88,7 @@ pub fn get_device_id() -> String {
 ///
 /// Uses multiple system identifiers to create a unique but consistent
 /// device identifier that persists across restarts.
-fn generate_device_id() -> String {
+pub fn generate_device_id() -> String {
     let mut hasher = Sha256::new();
 
     // Include multiple system identifiers for uniqueness
@@ -214,7 +214,10 @@ mod tests {
     #[test]
     fn test_platform_detection() {
         let platform = get_platform();
-        assert!(matches!(platform, Platform::Windows | Platform::Macos | Platform::Linux | Platform::Unknown));
+        assert!(matches!(
+            platform,
+            Platform::Windows | Platform::Macos | Platform::Linux | Platform::Unknown
+        ));
     }
 
     #[test]
